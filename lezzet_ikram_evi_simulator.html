@@ -51,26 +51,26 @@
 const products=[["Kıymalı Patatesli Börek","🥟",470],["Sade Patatesli Börek","🥟",400],["Otlu Peynirli Börek","🥧",470],["Patlıcanlı Arnavut Böreği","🥧",400],["Pırpeç","🍳",400],["Kurabiye","🍪",450],["Mayalı Poğaça","🥐",20],["Dereotlu Poğaça","🥐",25],["Dilim Kek","🍰",50],["Islak Kek","🍫",90],["Cupcake","🧁",50],["İçli Köfte","🧆",80],["Kısır","🥗",90],["Patates Salatası","🥔",90],["Mercimek Köftesi","🟢",90],["Börülce Salatası","🥗",120],
 ["Çay","🍵",15],["Türk Kahvesi","☕",35],["Limonata","🍋",30],["Ayran","🥛",25],["Su","💧",10]];
 let money=100,rep=0,customer=null,pending=null,served=0,upgradeLevel=1,day=1,customersToday=0,dayChanging=false;
-const $=x=>document.getElementById(x);
-function render(){
- $("money").textContent=money;$("rep").textContent=rep;
- $("menu").innerHTML=products.map((p,i)=>{
-   const wanted=customer&&customer.items.includes(i);
-   const done=customer&&customer.served.includes(i);
-   return `<div class="card" style="${done?'opacity:.65;border-color:#4b8a4b;':wanted?'outline:4px solid #3b7d3b;':''}">
-     <div class="food">${p[1]}</div>
-     <div class="name">${p[0]}</div>
-     <div class="price">${p[2]}₺</div>
-     ${done?'<div style="font-weight:900;color:#36713a;margin-bottom:5px">✅ Servis edildi</div>':wanted?'<div style="font-weight:900;color:#36713a;margin-bottom:5px">👤 Siparişte!</div>':''}
-     <button class="btn ${!customer||done?'disabled':''}" onclick="serve(${i})">${done?'✅ Verildi':'🍽️ Servis ver'}</button>
-   </div>`;
- }).join("");
+const  $ = x = > document.getElementById ( x ) ;​
+fonksiyon  render ( ) {
+ $ ( "para" ) . metinİçeriği = para ; $ ( "temsilci" ) . metinİçerik = temsilci ;
+ $ ( "menü" ) . innerHTML = ürünler . map ( ( p , i ) => {
+   const  wanted = customer && customer.items.includes ( i ) ;​​​​
+   const  done = customer && customer . serve . includes ( i ) ;
+   return  `<div class="card" style=" ${ done ? 'opacity:.65;border-color:#4b8a4b;' : wanted ? 'outline:4px solid #3b7d3b;' : '' } ">
+     <div class="food"> ${ p [ 1 ] } </div>
+     <div class="name"> ${ p [ 0 ] } </div>
+     <div class="price"> ${ p [ 2 ] } ₺</div>
+     ${ done ? '<div style="font-weight:900;color:#36713a;margin-bottom:5px">✅ Servislendi</div>' : wanted ? '<div style="font-weight:900;color:#36713a;margin-bottom:5px">👤 Siparişte!</div>' : '' }
+     <button class="btn ${ ! customer || done ? 'disabled' : '' } " onclick="serve( ${ i } )"> ${ done ? '✅ Verildi' : '🍽️ Servis ver' } </button>
+   </div>` ;
+ } ) . katılmak ( "" ) ;
 }
-function spawnNextCustomer(){
+ spawnNextCustomer(){
   if(customer) return;
   newCustomer();
-}
-function newCustomer(){
+
+ newCustomer(){
  if(!gameStarted || customer || dayChanging)return;
  if(customersToday>=10){endDay();return;}
 
